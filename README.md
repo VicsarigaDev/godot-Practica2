@@ -37,16 +37,6 @@ Gravedad y colisiones implementadas mediante CharacterBody2D.
 
 Rebote del jugador al eliminar enemigos.
 
-Estructura del proyecto
-res://
-├── Player.tscn
-│   └── Player.gd
-├── Enemy.tscn
-│   └── Enemy.gd
-├── TileMap.tscn
-├── TileSet.tres
-└── Main.tscn
-
 
 Player.tscn / Player.gd → Nodo y script del jugador.
 
