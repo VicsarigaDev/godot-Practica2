@@ -1,0 +1,71 @@
+[gd_scene load_steps=10 format=3 uid="uid://bem3ohhi2j7k1"]
+
+[ext_resource type="Script" path="res://snake.gd" id="1_a873o"]
+[ext_resource type="Texture2D" uid="uid://xdayhcmpjgjq" path="res://Rocky Roads/Rocky Roads/Enemies/snake.png" id="2_rx7k2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j2sad"]
+atlas = ExtResource("2_rx7k2")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k1gma"]
+atlas = ExtResource("2_rx7k2")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8vhqo"]
+atlas = ExtResource("2_rx7k2")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nb5w3"]
+atlas = ExtResource("2_rx7k2")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kndkm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j2sad")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k1gma")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8vhqo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nb5w3")
+}],
+"loop": true,
+"name": &"run",
+"speed": 6.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x7y8r"]
+size = Vector2(30, 18)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ngue5"]
+size = Vector2(26, 1)
+
+[node name="snake" type="CharacterBody2D"]
+script = ExtResource("1_a873o")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(2, -4)
+scale = Vector2(1.18, 1.32353)
+sprite_frames = SubResource("SpriteFrames_kndkm")
+animation = &"run"
+frame_progress = 0.503003
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2, 8)
+shape = SubResource("RectangleShape2D_x7y8r")
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(0, -2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(2, 0.5)
+shape = SubResource("RectangleShape2D_ngue5")
+debug_color = Color(0.945098, 0.121569, 0.513726, 0.419608)

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b7xylwar8oqum"
+path="res://.godot/imported/mystery-music-loop-226835.mp3-a2923f68ffd63ee68ced91c5283225d3.mp3str"
+
+[deps]
+
+source_file="res://Rocky Roads/Rocky Roads/Enemies/mystery-music-loop-226835.mp3"
+dest_files=["res://.godot/imported/mystery-music-loop-226835.mp3-a2923f68ffd63ee68ced91c5283225d3.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
